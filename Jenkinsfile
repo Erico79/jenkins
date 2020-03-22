@@ -13,7 +13,9 @@ pipeline {
             deleteDir() /* clean up our workspace */
         }
         success {
-            echo 'I succeeeded!'
+            mail to: 'team@example.com',
+             subject: "Successful Build",
+             body: "Build was successful. Yay!!!"
         }
         unstable {
             echo 'I am unstable :/'
